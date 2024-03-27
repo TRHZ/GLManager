@@ -1,12 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -15,47 +7,11 @@ import {
   Text,
   useColorScheme,
   View,
+  TouchableOpacity,
 } from 'react-native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
-
-function App(): React.JSX.Element {
+const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -71,47 +27,79 @@ function App(): React.JSX.Element {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+        {/* Header */}
+        <View style={styles.header}>
+          <TouchableOpacity onPress={() => console.log('Ir a la información del usuario')}>
+            <View style={styles.iconButton}>
+              {/* Icono de usuario */}
+              <Text style={styles.iconText}>Usuario</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => console.log('Ir a los ajustes')}>
+            <View style={styles.iconButton}>
+              {/* Icono de ajustes */}
+              <Text style={styles.iconText}>Ajustes</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+
+        {/* Contenido principal */}
+        <View style={styles.content}>
+          {/* Aquí irá el resumen de productos e materiales */}
+          <Text style={styles.summary}>
+            Resumen de productos e materiales ingresados
+          </Text>
+          {/* Puedes agregar más componentes aquí para mostrar el resumen */}
         </View>
       </ScrollView>
+
+      {/* Botón de opciones */}
+      <TouchableOpacity onPress={() => console.log('Ir a las opciones del gestor')} style={styles.optionButton}>
+        <Text style={styles.optionText}>Opciones</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 10,
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
+  iconButton: {
+    backgroundColor: 'lightblue',
+    borderRadius: 25,
+    width: 50,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  sectionDescription: {
-    marginTop: 8,
+  iconText: {
+    fontSize: 13,
+    fontWeight: 'bold',
+  },
+  content: {
+    flex: 1, // Usa todo el espacio disponible
+    justifyContent: 'center', // Centra el contenido verticalmente
+    alignItems: 'center', // Centra el contenido horizontalmente
+    padding: 20,
+  },
+  summary: {
     fontSize: 18,
-    fontWeight: '400',
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
-  highlight: {
-    fontWeight: '700',
+  optionButton: {
+    backgroundColor: 'lightgreen',
+    alignItems: 'center',
+    padding: 15,
+    margin: 10, // Agregamos un margen para separar el botón del contenido
+    alignSelf: 'center', // Lo alineamos al centro horizontalmente
+  },
+  optionText: {
+    fontSize: 20,
+    fontWeight: 'bold',
   },
 });
 
