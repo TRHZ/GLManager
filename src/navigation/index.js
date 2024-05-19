@@ -8,6 +8,14 @@ import ConfirmEmailScreen from '../screens/ConfirmEmailScreen';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
 import NewPasswordScreen from '../screens/NewPasswordScreen';
 import HomeScreen from '../screens/HomeScreen'
+import DeleteScreen from '../screens/DeleteScreen';
+import EditScreen from '../screens/EditScreen';
+import LowStockScreen from '../screens/LowStockScreen';
+import ProductsAddScreen from '../screens/ProductsAddScreen';
+import SearchScreen from '../screens/SearchScreen';
+import SettingsScreen from '../screens/SettingsScreen';
+import ShowAllScreen from '../screens/ShowAllScreen';
+
 
 const Stack = createNativeStackNavigator();
 
