@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, useWindowDimensions, ScrollView } from "react-native";
 import CustomInput from "../../components/CustomInput";
 import CustomButton from "../../components/CustomButton";
-import SocialSignInButton from "../../components/SocialSignInButton";
 import { useNavigation } from "@react-navigation/native";
 
 
@@ -12,7 +11,7 @@ const ConfirmEmailScreen = () => {
     const navigation = useNavigation();
 
     const onConfirmPressed = () => {
-        navigation.navigate('Home');
+        navigation.navigate('Bar');
     }
 
     const onSignIn = () => {

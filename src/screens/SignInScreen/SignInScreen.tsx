@@ -5,6 +5,7 @@ import CustomInput from "../../components/CustomInput";
 import CustomButton from "../../components/CustomButton";
 import SocialSignInButton from "../../components/SocialSignInButton";
 import { useNavigation } from "@react-navigation/native";
+import BottomBar from "../../components/BottomBar/BottomBar";
 
 const SignInScreen = () => {
     const [username, setUsername] = useState('');
@@ -15,8 +16,7 @@ const SignInScreen = () => {
 
     const onSignInPressed = () => {
         //validate user
-
-        navigation.navigate('Home');
+        navigation.navigate('Bar');
     }
 
     const onForgotPasswordPressed = () => {

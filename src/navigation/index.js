@@ -8,13 +8,8 @@ import ConfirmEmailScreen from '../screens/ConfirmEmailScreen';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
 import NewPasswordScreen from '../screens/NewPasswordScreen';
 import HomeScreen from '../screens/HomeScreen'
-import DeleteScreen from '../screens/DeleteScreen';
-import EditScreen from '../screens/EditScreen';
-import LowStockScreen from '../screens/LowStockScreen';
-import ProductsAddScreen from '../screens/ProductsAddScreen';
-import SearchScreen from '../screens/SearchScreen';
-import SettingsScreen from '../screens/SettingsScreen';
-import ShowAllScreen from '../screens/ShowAllScreen';
+import BottomBar from '../components/BottomBar/BottomBar';
+
 
 
 const Stack = createNativeStackNavigator();
@@ -29,6 +24,7 @@ const Navigation = () => {
                 <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
                 <Stack.Screen name="NewPassword" component={NewPasswordScreen} />
                 <Stack.Screen name="Home" component={HomeScreen} />
+                <Stack.Screen name="Bar" component={BottomBar} />
             </Stack.Navigator>
         </NavigationContainer>
     );
