@@ -9,6 +9,7 @@ import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
 import NewPasswordScreen from '../screens/NewPasswordScreen';
 import HomeScreen from '../screens/HomeScreen'
 import BottomBar from '../components/BottomBar/BottomBar';
+import ProductsAddScreen from '../screens/ProductsAddScreen/ProductsAddScreen';
 
 
 
@@ -25,6 +26,7 @@ const Navigation = () => {
                 <Stack.Screen name="NewPassword" component={NewPasswordScreen} />
                 <Stack.Screen name="Home" component={HomeScreen} />
                 <Stack.Screen name="Bar" component={BottomBar} />
+                <Stack.Screen name="ProductsAdd" component={ProductsAddScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     );
