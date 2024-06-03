@@ -1,79 +1,45 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 1. GLManager
 
-# Getting Started
+- [1. GLManager](#1-glmanager)
+  - [1.1. Descripción](#11-descripción)
+  - [1.2. Estructura de la Aplicación](#12-estructura-de-la-aplicación)
+  - [1.3. Conexión al Web Service](#13-conexión-al-web-service)
+  - [1.4. Instrucciones para Ejecutar la Aplicación](#14-instrucciones-para-ejecutar-la-aplicación)
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## 1.1. Descripción
+GLManager es una aplicación móvil diseñada para gestionar las actividades y tareas de los usuarios, proporcionando una interfaz intuitiva y funcional.
 
-## Step 1: Start the Metro Server
+## 1.2. Estructura de la Aplicación
+- **Home Screen**: Pantalla principal de la aplicación.
+- **Login Screen**: Pantalla de inicio de sesión.
+- **Registration Screen**: Pantalla de registro de usuarios.
+- **Dashboard**: Panel principal con opciones y funcionalidades.
+- **Profile Screen**: Pantalla de perfil del usuario.
+- **Settings Screen**: Pantalla de configuración de la aplicación.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## 1.3. Conexión al Web Service
+La aplicación se conecta a un Web Service que maneja el almacenamiento y la consulta de datos mediante solicitudes GET y POST.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## 1.4. Instrucciones para Ejecutar la Aplicación
+1. Clona el repositorio:
+   git clone https://github.com/TRHZ/GLManager.git
 
-```bash
-# using npm
-npm start
+2. Navega al directorio del proyecto (Dependiendo de donde lo tienes):
+   cd GLManager
 
-# OR using Yarn
-yarn start
-```
+3. Instala las dependencias
+   npm install
 
-## Step 2: Start your Application
+4. Clona el repositorio del Servicio Web eh instalas sus dependencias:
+   git clone https://github.com/TRHZ/GLManager-Web-Service.git
+   npm install
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+   1. inicia lo que es el servicio web
+      docker compose up -d (comando para construir e iniciar si es la primera vez)
+      docker compose down (comando para detener el Servicio Web)
 
-### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+5. Configura las variables para conectar al backend:
+   En este caso, modifica la URL del archivo (Es decir el host) [WebServiceParams.ts](src/WebServiceParams.ts) por la IP de tu maquina
+   
+6. Una vez hecho lo anterior inicia la aplicacion
+   npm start y despues seleccionas la opcion de Android.
