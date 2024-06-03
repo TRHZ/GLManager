@@ -3,6 +3,7 @@
 - [1. GLManager](#1-glmanager)
   - [1.1. Descripción](#11-descripción)
   - [1.2. Estructura de la Aplicación](#12-estructura-de-la-aplicación)
+  - [1.3 Asistencia visual](#13-asistencia-visual)
   - [1.3. Conexión al Web Service](#13-conexión-al-web-service)
   - [1.4. Instrucciones para Ejecutar la Aplicación](#14-instrucciones-para-ejecutar-la-aplicación)
 
@@ -48,6 +49,9 @@ El ChangeEmailScreen es la pantalla que permite cambiar el correo electrónico (
 - **assets/**: Contiene recursos como imágenes.
 - **components/**: Contiene los componentes reutilizables.
 - **services/**: Contiene los servicios para interactuar con el backend.
+  
+## 1.3 Asistencia visual
+Puede observar la navegacion entre pantallas de forma visual [TutorialScreens](TutorialScreens)
 
 ## 1.3. Conexión al Web Service
 La aplicación se conecta a un Web Service que maneja el almacenamiento y la consulta de datos mediante solicitudes GET y POST.
@@ -62,7 +66,7 @@ La aplicación se conecta a un Web Service que maneja el almacenamiento y la con
 3. Instala las dependencias
    npm install
 
-4. Clona el repositorio del Servicio Web eh instalas sus dependencias:
+4. Clona el repositorio del Servicio Web eh instalas sus dependencias (Leer el Read me del servicio web):
    git clone https://github.com/TRHZ/GLManager-Web-Service.git
    npm install
 
