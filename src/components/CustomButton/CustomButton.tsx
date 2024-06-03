@@ -1,20 +1,32 @@
 import React from "react";
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import { View, Text, StyleSheet, Pressable, StyleProp, ViewStyle, TextStyle } from "react-native";
 
-const CustomButton = ({onPress, text, type = "PRIMARY", bgColor, fgColor}) => {
+type ButtonType = 'PRIMARY' | 'SECONDARY' | 'TERTIARY';
+
+type CustomButtonProps = {
+    onPress: () => void;
+    text: string;
+    type?: ButtonType;
+    bgColor?: string;
+    fgColor?: string;
+};
+
+const CustomButton: React.FC<CustomButtonProps> = ({ onPress, text, type = 'PRIMARY', bgColor, fgColor }) => {
+    const containerStyle: StyleProp<ViewStyle> = [
+        styles.container,
+        styles[`container_${type}` as keyof typeof styles],
+        bgColor ? { backgroundColor: bgColor } : {}
+    ];
+
+    const textStyle: StyleProp<TextStyle> = [
+        styles.text,
+        styles[`text_${type}` as keyof typeof styles],
+        fgColor ? { color: fgColor } : {}
+    ];
+
     return (
-        <Pressable 
-            onPress={onPress} 
-            style={[styles.container, 
-            styles[`container_${type}`],
-            bgColor ? {backgroundColor: bgColor} : {},
-            ]}>
-            <Text 
-            style={[styles.text, 
-            styles[`text_${type}`],
-            fgColor ? {color: fgColor} : {},
-            ]}>{text}
-            </Text>
+        <Pressable onPress={onPress} style={containerStyle}>
+            <Text style={textStyle}>{text}</Text>
         </Pressable>
     );
 }
@@ -51,8 +63,6 @@ const styles = StyleSheet.create({
     text_TERTIARY: {
         color: 'gray',
     },
-
-
 });
 
 export default CustomButton;

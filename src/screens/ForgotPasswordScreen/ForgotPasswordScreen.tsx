@@ -1,23 +1,28 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, useWindowDimensions, ScrollView } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import CustomInput from "../../components/CustomInput";
 import CustomButton from "../../components/CustomButton";
-import SocialSignInButton from "../../components/SocialSignInButton";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, NavigationProp, ParamListBase } from "@react-navigation/native";
+import styles from './frgtScreen'; // Importa los estilos desde el nuevo archivo
 
+// Define the types of the routes
+type RootStackParamList = {
+    NewPassword: undefined;
+    SignIn: undefined;
+};
 
 const ForgotPasswordScreen = () => {
-    const [username, setUsername] = useState('');
+    const [username, setUsername] = useState<string>('');
 
-    const navigation = useNavigation();
+    const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
     const onSendPressed = () => {
-        navigation.navigate('NewPassword')
-    }
+        navigation.navigate('NewPassword');
+    };
 
     const onSignIn = () => {
         navigation.navigate('SignIn');
-    }
+    };
 
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
@@ -29,33 +34,13 @@ const ForgotPasswordScreen = () => {
                 <CustomButton text="Send" onPress={onSendPressed} />
 
                 <CustomButton
-                text="Back to Sign In"
-                onPress={onSignIn}
-                type="TERTIARY"
+                    text="Back to Sign In"
+                    onPress={onSignIn}
+                    type="TERTIARY"
                 />
             </View>
         </ScrollView>
     );
 };
-
-const styles = StyleSheet.create({
-    root: {
-        alignItems: 'center',
-        padding: 40,
-    },
-    title: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        color: '#051C60',
-        margin: 10,
-    },
-    text: {
-        fontSize: 12,
-        marginVertical: 10,
-    },
-    link: {
-        color: '#FDB075'
-    }
-});
 
 export default ForgotPasswordScreen;

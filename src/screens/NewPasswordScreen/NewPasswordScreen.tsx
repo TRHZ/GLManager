@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, useWindowDimensions, ScrollView } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import CustomInput from "../../components/CustomInput";
 import CustomButton from "../../components/CustomButton";
-import SocialSignInButton from "../../components/SocialSignInButton";
 import { useNavigation } from "@react-navigation/native";
-
+import styles from './nwScreen'; // Importa los estilos desde el nuevo archivo
 
 const NewPasswordScreen = () => {
-    const [code, setCode] = useState('');
-    const [newPassword, setNewPassword] = useState('');
+    const [code, setCode] = useState<string>('');
+    const [newPassword, setNewPassword] = useState<string>('');
 
     const navigation = useNavigation();
 
@@ -40,25 +39,5 @@ const NewPasswordScreen = () => {
         </ScrollView>
     );
 };
-
-const styles = StyleSheet.create({
-    root: {
-        alignItems: 'center',
-        padding: 40,
-    },
-    title: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        color: '#051C60',
-        margin: 10,
-    },
-    text: {
-        fontSize: 12,
-        marginVertical: 10,
-    },
-    link: {
-        color: '#FDB075'
-    }
-});
 
 export default NewPasswordScreen;

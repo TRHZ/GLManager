@@ -9,7 +9,11 @@ import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
 import NewPasswordScreen from '../screens/NewPasswordScreen';
 import HomeScreen from '../screens/HomeScreen'
 import BottomBar from '../components/BottomBar/BottomBar';
-import ProductsAddScreen from '../screens/ProductsAddScreen/ProductsAddScreen';
+import EditScreen from '../screens/EditScreen';
+import DeleteScreen from '../screens/DeleteScreen';
+import ProductDetailScreen from '../screens/ProductDetailScreen';
+import ProdAddMat from '../screens/ProductsAddScreen/ProdAddMat';
+import ProdAddProd from '../screens/ProductsAddScreen/ProdAddProd';
 
 
 
@@ -26,7 +30,11 @@ const Navigation = () => {
                 <Stack.Screen name="NewPassword" component={NewPasswordScreen} />
                 <Stack.Screen name="Home" component={HomeScreen} />
                 <Stack.Screen name="Bar" component={BottomBar} />
-                <Stack.Screen name="ProductsAdd" component={ProductsAddScreen} />
+                <Stack.Screen name="Edit" component={EditScreen} />
+                <Stack.Screen name='Delete' component={DeleteScreen} />
+                <Stack.Screen name='ProductDetail' component={ProductDetailScreen} />
+                <Stack.Screen name='ProdAddMat' component={ProdAddMat} />
+                <Stack.Screen name='ProdAddProd' component={ProdAddProd} />
             </Stack.Navigator>
         </NavigationContainer>
     );

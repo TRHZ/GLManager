@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "312295812139",
+    "project_id": "greenlink-manager",
+    "storage_bucket": "greenlink-manager.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312295812139:android:5b8180713a3ba516bd4e6e",
+        "android_client_info": {
+          "package_name": "com.glmanager"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAosjYv0Yvp_EoZo2SmOOXygHWHziKKKmQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
