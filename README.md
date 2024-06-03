@@ -7,15 +7,47 @@
   - [1.4. Instrucciones para Ejecutar la Aplicación](#14-instrucciones-para-ejecutar-la-aplicación)
 
 ## 1.1. Descripción
-GLManager es una aplicación móvil diseñada para gestionar las actividades y tareas de los usuarios, proporcionando una interfaz intuitiva y funcional.
+GLManager es una aplicación móvil diseñada ser un gestor de inventarios para empacadoras que trabajan con frutas/verduras, al igual que le permite registrar materiales (Como ejemplo: Esquineros, cajas, grapas, etc), en esta contiene lo que son 14 pantallas, pero las funcionales referente el funcionamiento principal de este son el HomeScreen, LowStockScreen, ProductDetailScreen, ProductAddScreen, SearchScreen, ShowAllScreen y SettingsScreen. En el caso del resto cumplen con su funcion de navegacion pero no validan las credenciales de los usuarios.
+El HomeScreen es la pantalla principal de la aplicación, en esta se muestra el inventario de los productos/materiales.
+El LowStockScreen es la pantalla que muestra los productos/materiales que se encuentran en stock bajo.
+El ProductDetailScreen es la pantalla que muestra los detalles de un producto/material.
+El ProductAddScreen es la pantalla que permite agregar un nuevo producto/material.
+El SearchScreen es la pantalla que permite buscar un producto/material.
+El ShowAllScreen es la pantalla que muestra todos los productos/materiales.
+El SettingsScreen es la pantalla que permite configurar la aplicación (Por el momento solo demuestra el ingles y español en el).
+El LoginScreen es la pantalla que permite iniciar sesión en la aplicación (No valida).
+El RegisterScreen es la pantalla que permite registrarse en la aplicación (No valida).
+El ForgotPasswordScreen es la pantalla que permite recuperar la contraseña (No valida).
+El ChangePasswordScreen es la pantalla que permite cambiar la contraseña (No valida).
+El ChangeEmailScreen es la pantalla que permite cambiar el correo electrónico (No valida).
 
 ## 1.2. Estructura de la Aplicación
-- **Home Screen**: Pantalla principal de la aplicación.
-- **Login Screen**: Pantalla de inicio de sesión.
-- **Registration Screen**: Pantalla de registro de usuarios.
-- **Dashboard**: Panel principal con opciones y funcionalidades.
-- **Profile Screen**: Pantalla de perfil del usuario.
-- **Settings Screen**: Pantalla de configuración de la aplicación.
+- **src/**: Contiene todos los archivos de código fuente.
+  - **components/**: Contiene los componentes de la aplicacion.
+    - **Authentication**: Renderiza una vista segura que contiene el componente de navegación con un fondo claro.
+    - **BottomBar**: Configura y renderiza una barra de navegación inferior con diferentes pantallas.
+    - **CustomButton**: Renderiza un botón personalizable con diferentes estilos.
+    - **CustomImput**: Renderiza un campo de entrada de texto con estilos personalizables.
+    - **SocialSignInButton**: Este componente renderiza un botón personalizado para iniciar sesión.
+  - **navigation/**: Contiene la configuración de navegación.
+  - **screens/**: Contiene las pantallas de la aplicación.
+    - [ConfirmEmailScreen](src/screens/ConfirmEmailScreen) 
+    - [DeleteScreen](src/screens/DeleteScreen) 
+    - [EditScreen](src/screens/EditScreen) 
+    - [ForgotPasswordScreen](src/screens/ForgotPasswordScreen) 
+    - [HomeScreen](src/screens/HomeScreen) 
+    - [LowStockScreen](src/screens/LowStockScreen) 
+    - [NewPasswordScreen](src/screens/NewPasswordScreen) 
+    - [ProductDetailScreen](src/screens/ProductDetailScreen) 
+    - [ProductsAddScreen](src/screens/ProductsAddScreen) 
+    - [SearchScreen](src/screens/SearchScreen) 
+    - [SettingsScreen](src/screens/SettingsScreen) 
+    - [ShowAllScreen](src/screens/ShowAllScreen) 
+    - [SignInScreen](src/screens/SignInScreen) 
+    - [SignUpScreen](src/screens/SignUpScreen)
+- **assets/**: Contiene recursos como imágenes.
+- **components/**: Contiene los componentes reutilizables.
+- **services/**: Contiene los servicios para interactuar con el backend.
 
 ## 1.3. Conexión al Web Service
 La aplicación se conecta a un Web Service que maneja el almacenamiento y la consulta de datos mediante solicitudes GET y POST.
